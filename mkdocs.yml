@@ -1,0 +1,64 @@
+site_name: Yashovardhan Dhanania
+site_url: https://yashovardhan99.github.io/
+repo_url: https://github.com/yashovardhan99/yashovardhan99.github.io
+repo_name: yashovardhan99/yashovardhan99.github.io
+theme:
+  name: material
+  custom_dir: overrides
+  icon:
+    logo: material/alpha-y-box
+  favicon: assets/alpha-y-box.svg
+
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.top
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - content.tooltips
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: white
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: black
+
+nav:
+  - Home: index.md
+  - Blog:
+      - blog/index.md
+  # - NiveshPy: "https://yashovardhan99.github.io/niveshpy"
+
+plugins:
+  - blog:
+      blog_dir: blog
+  - search
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
+      categories:
+        - categories
+
+copyright: Copyright &copy; 2025 Yashovardhan Dhanania
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
