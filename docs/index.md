@@ -11,7 +11,7 @@ I am Yash, I am a _Data Engineer_ at :material-microsoft: __Microsoft__.
 
 Welcome to my home page!
 
-[:material-page-next: Check out my Blog](blog){ .md-button }
+[:material-page-next: Check out my Blog](blog/index.md){ .md-button }
 
 ## Projects
 Over time, I have worked on a lot of projects, you can find most of them on my [GitHub Profile](https://github.com/yashovardhan99) while some interesting ones are listed below:
