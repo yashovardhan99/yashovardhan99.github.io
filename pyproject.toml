@@ -1,7 +1,11 @@
 [project]
 name = "yashovardhan99.github.io"
 description = "My Personal Home Page"
-dependencies = ["mkdocs-material >= 9.0.0", "mkdocs-rss-plugin"]
+dependencies = [
+    "mkdocs-material >= 9.0.0",
+    "mkdocs-rss-plugin",
+    "mkdocs-glightbox",
+]
 requires-python = ">=3.13"
 authors = [
     { name = "Yashovardhan Dhanania", email = "yashovardhandhanania@gmail.com" },
