@@ -1,0 +1,30 @@
+[seller]
+name = "Jane Doe"
+tagline = "Graphic Designer"
+
+[invoice]
+date-format = "%d %b %Y"
+discount-column = "discount" # (1)
+style-color = "#f7e6e4"
+
+[receipt]
+date-format = "%d %b %Y"
+style-color = "#f7e6e4"
+
+[signature]
+prefix = "Thank You!"
+
+[payment]
+payment-methods-text = "Pay via UPI/Cash"
+currency = "INR"
+
+[footer]
+text = "__All amounts are in INR.__" # (2)
+
+[excel]
+filepath = "sample.xlsx"
+
+[output.combined]
+path = "output/samples/combined.pdf"
+type = "combined"                    # (3)
+include-summary = true
