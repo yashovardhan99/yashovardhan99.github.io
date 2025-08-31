@@ -1,7 +1,7 @@
 ---
-draft: true
 date: 
   created: 2025-08-14
+  updated: 2025-08-31
 categories:
   - General
   - Project Update
@@ -14,6 +14,7 @@ authors:
 links:
   - External Links:
     - GitHub: http://github.com/yashovardhan99/bulkinvoicer/
+comments: true
 ---
 
 # Introducing BulkInvoicer
