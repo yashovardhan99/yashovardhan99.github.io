@@ -1,0 +1,47 @@
+{% import "blog-macros.html" as blog %}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="about-me">
+    <div class="flex-item">
+        {% set image = resize_image(path='yashovardhan99.jpg', height=600, op='fit_height')%}
+        <img fetchpriority=high src="{{ image.url }}" alt="Yashovardhan Dhanania" class="img profile-img"" target="
+            _blank" width="{{ image.width }}">
+    </div>
+    <div class=" flex-item">
+        <h1 class="title">
+            Hi, I'm Yashovardhan 👋
+        </h1>
+        <p class="about-me-text">
+            I'm a Data & AI Consultant at Microsoft.
+            <br>
+            Check out what I am doing <a href="{{ get_url(path='/now') }}">now</a>.
+            <br>
+            Take a look at my open-source <a href="{{ get_url(path='/projects') }}">projects</a>.
+            <br>
+            <a href="https://topmate.io/yashovardhan99" target="_blank">Schedule a time</a> to talk with me.
+        </p>
+
+        <div class="social-links">
+            <a href="https://github.com/yashovardhan99/" class="social-link" title="GitHub">{{
+                load_data(path="static/icons/github.svg") | safe
+                }}</a>
+            <a href="https://linkedin.com/in/yashovardhan99/" class="social-link" title="LinkedIn">{{
+                load_data(path="static/icons/linkedin.svg") | safe
+                }}</a>
+            <a href="mailto:yashovardhandhanania@gmail.com" class="social-link" title="Email">{{
+                load_data(path="static/icons/email.svg") | safe }}</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="divider intro-divider">
+    <hr>
+</div>
+
+<div class="home-posts">
+    {{ blog::recent_posts(title="Recent Posts", include_summary=false) }}
+</div>
+
+{% endblock content %}

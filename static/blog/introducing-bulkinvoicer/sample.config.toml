@@ -1,0 +1,31 @@
+[seller]
+name    = "Jane Doe"
+tagline = "Graphic Designer"
+
+[invoice]
+date-format     = "%d %b %Y"
+discount-column = "discount" # Use the same name as used in your excel file.
+style-color     = "#f7e6e4"
+
+[receipt]
+date-format = "%d %b %Y"
+style-color = "#f7e6e4"
+
+[signature]
+prefix = "Thank You!"
+
+[payment]
+payment-methods-text = "Pay via UPI/Cash"
+currency             = "INR"
+
+[footer]
+text = "__All amounts are in INR.__" # Basic markdown is supported. 
+# It is possible to use `**bold**`, `__italics__`, `~~strikethrough~~` or `--underlined--`
+
+[excel]
+filepath = "sample.xlsx"
+
+[output.combined]
+path            = "output/samples/combined.pdf"
+type            = "combined"                    # Can be set to combined, individual, or clients
+include-summary = true

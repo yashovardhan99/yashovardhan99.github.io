@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ get_url(path='site.css', cachebust=true) }}">
+    <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+    <meta name="author" content="{{ config.extra.author }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ get_url(path='icons/favicon.svg') }}">
+</head>
+
+<body>
+    {% if current_path %}
+    {% set current_section = current_path | split(pat="/") | nth(n=1) %}
+    {% else %}
+    {% set current_section = "error" %}
+    {% endif %}
+    <header>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="{{ get_url(path='/') }}"
+                        class="nav-link nav-link-home {% if current_section == '' %}active{% endif %}">Yashovardhan
+                        Dhanania</a></li>
+                <li class="nav-item"><a href="{{ get_url(path='/now') }}"
+                        class="nav-link {% if current_section == 'now' %}active{% endif %}">/now</a>
+                </li>
+                <li class="nav-item"><a href="{{ get_url(path='/projects') }}"
+                        class="nav-link {% if current_section == 'projects' %}active{% endif %}">/projects</a>
+                </li>
+                <li class="nav-item"><a href="{{ get_url(path='/blog') }}"
+                        class="nav-link {% if current_section == 'blog' %}active{% endif %}">/blog</a></li>
+                </li>
+            </ul>
+        </nav>
+        <div class="divider nav-divider">
+            <hr>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                {% block content %} {% endblock content %}
+            </div>
+        </section>
+        <div>
+            {% block pagefooter %} {% endblock pagefooter %}
+        </div>
+    </main>
+    {% if current_section != '' %}
+    <footer>
+        <p>© {{ now() | date(format="%Y") }} Yashovardhan Dhanania</p>
+        <div class="social-links" style="align-self: center;">
+            <a href="https://github.com/yashovardhan99/" class="social-link" title="GitHub">{{
+                load_data(path="static/icons/github.svg") | safe
+                }}</a>
+            <a href="https://linkedin.com/in/yashovardhan99/" class="social-link" title="LinkedIn">{{
+                load_data(path="static/icons/linkedin.svg") | safe
+                }}</a>
+            <a href="mailto:yashovardhandhanania@gmail.com" class="social-link" title="Email">{{
+                load_data(path="static/icons/email.svg") | safe }}</a>
+        </div>
+    </footer>
+    {% endif %}
+</body>
+<script defer src="{{ get_url(path='copy-code.js', cachebust=true) }}"></script>
+<link fetchpriority="low" rel="stylesheet" href="{{ get_url(path='glightbox.min.css') }}">
+<script defer src="{{ get_url(path='glightbox.min.js') }}"></script>
+<script defer type="text/javascript">
+    document.addEventListener("DOMContentLoaded", async () => {
+        const lightbox = GLightbox({ "selector": ".glightbox" });
+        lightbox.on('open', (target) => {
+            console.log('lightbox opened');
+        });
+        lightbox.on('close', (target) => {
+            console.log('lightbox closed');
+        });
+        console.log('lightbox initialized');
+    });
+</script>
+
+</html>

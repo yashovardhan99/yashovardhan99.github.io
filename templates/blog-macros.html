@@ -1,0 +1,19 @@
+{% macro recent_posts(title="", include_summary=true, starting_heading=2) %}
+<div class="recent-posts">
+    {% if title %}
+    <h{{ starting_heading }}>{{ title }}</h{{ starting_heading }}>
+    {% endif %}
+    {% set section = get_section(path='blog/_index.md') %}
+    {% for page in section.pages %}
+    <div class="post-card">
+        <h{{ starting_heading + 1 }} class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h{{
+            starting_heading + 1 }}>
+        <p class="date">{{ page.date | date(format="%B %e, %Y") }}</p>
+        {% if include_summary and page.summary %}
+        <p class="post-excerpt">{{ page.summary | safe }}</p>
+        <a href="{{ page.permalink | safe }}#continue-reading" class="read-more">Continue Reading...</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endmacro recent_posts %}

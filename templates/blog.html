@@ -1,0 +1,10 @@
+{% import "blog-macros.html" as blog %}
+{% extends "base.html" %}
+{% block title %}{{ section.title }} | {{ super() }} {% endblock title %}
+{% if section.description %}
+{% block description %}{{ section.description }}{% endblock description %}
+{% endif %}
+{% block content %}
+<h1 class="title">All Posts</h1>
+{{ blog::recent_posts(starting_heading=1) }}
+{% endblock content %}

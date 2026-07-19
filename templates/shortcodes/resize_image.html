@@ -1,0 +1,15 @@
+{% set image_path = page.path ~ path %}
+{% set large_image_url = get_url(path=image_path) %}
+{% set image = resize_image(path=image_path, width=width, height=height, op=op) %}
+<figure>
+    <a href="{{ large_image_url }}" class="glightbox" data-type="image" {% if caption %}data-title="{{ caption }}"
+        data-desc-position="bottom" {% endif %}>
+        <img src="{{ image.url }}" alt="{{ alt }}" width="{{ image.width }}" height="{{ image.height }}" {% if lazy
+            %}loading="lazy" {% endif %} />
+    </a>
+    {% if caption %}
+    <figcaption>
+        {{ caption }}
+    </figcaption>
+    {% endif %}
+</figure>

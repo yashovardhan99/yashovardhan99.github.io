@@ -1,0 +1,25 @@
+# The URL the site will be built for
+base_url    = "https://yashovardhan99.github.io"
+title       = "Yashovardhan Dhanania"
+description = "Personal homepage of Yashovardhan Dhanania, Data & AI Engineer and Open Source Enthusiast."
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+
+insert_anchor_links = "left"
+
+[markdown.highlighting]
+theme = "dark-plus"
+
+[link_checker]
+# Skip link checking for external URLs that start with these prefixes
+# LinkedIn returns a 999 error when it detects a bot, so we skip it here.
+skip_prefixes = [ "https://linkedin.com/" ]
+
+[extra]
+# Put all your custom variables here
+author = "Yashovardhan Dhanania"

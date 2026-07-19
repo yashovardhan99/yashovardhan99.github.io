@@ -1,0 +1,12 @@
+{# Simple template for content only pages. #}
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ super() }} {% endblock title %}
+{% if page.description %}
+{% block description %}{{ page.description }}{% endblock description %}
+{% endif %}
+
+
+{% block content %}
+{{ page.content | safe }}
+{% endblock content %}

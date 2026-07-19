@@ -1,0 +1,7 @@
+{% set image_path = page.path ~ path %}
+{% set image_url = get_url(path=image_path) %}
+<img src="{{ image_url }}" alt="{{ alt }}" {% if width %}width="{{ width }}" {% endif %} {% if height
+    %}height="{{ height }}" {% endif %} {% if lazy %}loading="lazy" {% endif %} />
+{% if caption %}
+<p class="caption">{{ caption }}</p>
+{% endif %}

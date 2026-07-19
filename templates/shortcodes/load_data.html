@@ -1,0 +1,2 @@
+{% set full_path = page.path ~ path %}{% if format %}{{ load_data(path=full_path, format=format) | safe }}{% else %}{{
+load_data(path=full_path) | safe }}{% endif %}

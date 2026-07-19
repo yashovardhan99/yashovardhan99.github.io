@@ -1,0 +1,24 @@
+<a href="{{ github_url }}" target="_blank" class="card" {% if color %}style="--color: {{ color }}" {% endif %}>
+    <div class="card-chip">
+        {% if tags %}
+        {% for tag in tags %}
+        <p>{{ tag }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <div class="card-title">
+        <h2>{{ project_name }}</h2>
+        {% if stars %}
+        <div class="card-stars">
+            <p>⭐ {{ stars }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <div class="card-content">
+        <p>{{ description }}</p>
+    </div>
+    <div class="card-link">
+        <p>View on GitHub -></p>
+    </div>
+
+</a>

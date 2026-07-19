@@ -1,0 +1,12 @@
+{% if relative %}
+{% set svg_path = page.path ~ path %}
+{% else %}
+{% set svg_path = path %}
+{% endif %}
+{% if link %}
+<a href="{{ link }}" class="social-link">
+    {% endif %}
+    {{ load_data(path=svg_path) | safe }}
+    {% if link %}
+</a>
+{% endif %}
