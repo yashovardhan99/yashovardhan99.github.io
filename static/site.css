@@ -406,7 +406,7 @@ tbody tr:nth-child(odd) {
     background-color: var(--secondary-color);
 }
 
-tr:hover {
+tbody tr:hover {
     color: var(--primary-color);
 }
 
